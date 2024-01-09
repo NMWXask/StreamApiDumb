@@ -1,19 +1,9 @@
-import java.util.List;
+import java.io.IOException;
 
 public class Main {
-    public static void main(String[] args) {
-        List <Patient> patients = Dump.getDump();
-
-        StreamMethods.anyMatchMethod(patients);
+    public static void main(String[] args) throws IOException {
+//        Dump.patients();
+        boolean isFree = false;
+        System.out.println(!isFree);
     }
-
-
 }
-
-//1.Метод collect() - Преобразовать стрим из пациентов в Map, где ключ - дата рождения, а значение - фио без преобразований
-//2.Метод ForEach() - Вывести на экран только список расходов каждого пациента
-//3.Метод min(),max() - Получить минимального и максимального пациента из потока, параметр - сумма всех расходов пациента, с помощью компаратора.
-//4.Метод findFirst() - получить первого пациента, кто родился в декабре 1999 года
-//5.Метод allMatch() - проверить, есть ли хоть один абсолютно здоровый человек
-//6.Метод noneMatch() - проверить, есть ли хоть один человек старше 100 лет
-//7.Метод anyMatch() - проверить, есть ли хоть один человек старше 100 лет

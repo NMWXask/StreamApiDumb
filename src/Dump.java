@@ -1,6 +1,7 @@
-import java.io.IOException;
+import java.io.*;
 import java.nio.file.Files;
 import java.nio.file.Paths;
+import java.util.Arrays;
 import java.util.List;
 import java.util.stream.Stream;
 
@@ -20,4 +21,22 @@ public class Dump {
             throw new RuntimeException(e);
         }
     }
+    public static void patients() throws IOException {
+        InputStream inStream = new FileInputStream(file);
+
+        InputStreamReader inputStreamReader = new InputStreamReader(inStream);
+
+        BufferedReader bufferedReader = new BufferedReader(inputStreamReader);
+
+        String line;
+
+        String[] patients = new String[0];
+
+        while ((line = bufferedReader.readLine()) != null) {
+            patients = line.split(" ");
+        }
+
+        System.out.println(Arrays.toString(patients));
+    }
 }
+
